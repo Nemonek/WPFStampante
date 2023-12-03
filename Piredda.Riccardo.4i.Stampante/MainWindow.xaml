@@ -1,0 +1,62 @@
+﻿<Window x:Class="Piredda.Riccardo._4i.Stampante.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Piredda.Riccardo._4i.Stampante"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="10" Click="PrintRandomPage">Stampa pagina random</Button>
+            <Button Margin="10" Click="PrintRandomPage">Stampa pagina</Button>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+            <Button Margin="10" Grid.Row="0" Grid.Column="0" Click="InserisciCarta">Inserisci carta</Button>
+            <TextBox x:Name="InputCarta" Width="100" Height="20" MaxLength="3"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
+            <Button Margin="10" Click="RiempiColore">Sostituisci colore</Button>
+            <ComboBox Height="25" x:Name="ComboBoxColori"></ComboBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
+            <Button Margin="10" Click="StatoColore">Stato colore</Button>
+            <ComboBox Height="25" x:Name="ComboBoxColoriStato"></ComboBox>
+            <TextBlock VerticalAlignment="Center" Margin="10" x:Name="TextStatoColore">0</TextBlock>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0">
+            <Button Margin="10" Click="StatoCartaEvent">Stato carta</Button>
+            <TextBlock VerticalAlignment="Center" Margin="10" x:Name="StatoCarta">0</TextBlock>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0">
+            <TextBox Width="20" Height="20" x:Name="ColoreCiano">1</TextBox>
+            <TextBox Width="20" Height="20" x:Name="ColoreMagenta">1</TextBox>
+            <TextBox Width="20" Height="20" x:Name="ColoreGiallo">1</TextBox>
+            <TextBox Width="20" Height="20" x:Name="ColoreNero">1</TextBox>
+        </StackPanel>
+
+        <StackPanel Margin="10, 0, 0, 0" Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+            <TextBlock>Esito ultima stampa:</TextBlock>
+            <TextBlock x:Name="Esito"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
